@@ -31,12 +31,11 @@ class ViewController: UIViewController
             enter()
         }
         switch operation {
-//            case "+":
-//            case "-":
-//            case "÷":
-            
-            case "✕": performOperation(multiply)
-        default: break
+            case "+": performOperation { $0 + $1 }
+            case "-": performOperation { $1 - $0 }
+            case "÷": performOperation { $1 / $0 }
+            case "✕": performOperation { $0 * $1 }
+            default: break
         }
     }
     
